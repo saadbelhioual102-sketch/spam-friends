@@ -239,7 +239,7 @@ app = Flask(__name__)
 
 @app.get("/spam")
 def start():
-    uid = request.args.get("user_id", "").strip()
+    uid = request.args.get("user_uid", "").strip()
     if not uid:
         return jsonify({"ok": False, "err": "uid required"}), 400
     if uid in active:
